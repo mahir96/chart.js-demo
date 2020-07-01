@@ -17,8 +17,15 @@ let massChart = new Chart(myChart, {
           "rgba(153, 102, 255, 0.2)",
           "rgba(255, 159, 64, 0.2)",
         ],
+        borderWidth: 2,
       },
     ],
   },
-  options: {},
+  options: {
+    title: {
+      display: true,
+      text: "Lagest Cities in Tanzania",
+      fontSize: 25,
+    },
+  },
 });
