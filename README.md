@@ -1,1 +1,1 @@
-chart.js demo project
+chart.js demo project available for contribution
