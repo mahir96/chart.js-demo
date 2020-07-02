@@ -1,5 +1,8 @@
 let myChart = document.getElementById("myChart").getContext("2d");
+let progress = document.getElementById("barProgress");
 
+// Global options
+Chart.defaults.global.animate;
 let massChart = new Chart(myChart, {
   // bar,horizontal,pie
   type: "bar",
@@ -22,10 +25,31 @@ let massChart = new Chart(myChart, {
     ],
   },
   options: {
+    legend: {
+      position: "top",
+      align: "center",
+    },
     title: {
       display: true,
       text: "Lagest Cities in Tanzania",
       fontSize: 25,
+      padding: 10,
+      lineHeight: 2.5,
+    },
+    tooltips: {
+      enabled: true,
+      backgroundColor: "rgba(0, 0, 0, 0.7)",
+      mode: "nearest",
+    },
+    animation: {
+      onProgress: function (animation) {
+        progress.value = animation.currentStep / animation.numSteps;
+      },
+      onComplete: function () {
+        window.setTimeout(function () {
+          progress.value = 0;
+        }, 2000);
+      },
     },
   },
 });
