@@ -1,5 +1,5 @@
 let myChart = document.getElementById("myChart").getContext("2d");
-let progress = document.getElementById("barProgress");
+// let progress = document.getElementById("barProgress");
 
 // Global options
 Chart.defaults.global.animate;
@@ -40,16 +40,6 @@ let massChart = new Chart(myChart, {
       enabled: true,
       backgroundColor: "rgba(0, 0, 0, 0.7)",
       mode: "nearest",
-    },
-    animation: {
-      onProgress: function (animation) {
-        progress.value = animation.currentStep / animation.numSteps;
-      },
-      onComplete: function () {
-        window.setTimeout(function () {
-          progress.value = 0;
-        }, 2000);
-      },
     },
   },
 });
